@@ -22,6 +22,7 @@ class MemoryGame:
         # Create buttons for the cards
         for i, card in enumerate(self.cards):
             button = tk.Button(root, text="", width=10, height=5, 
+                               bg="lightblue",
                                command=lambda i=i: self.flip_card(i))
             button.grid(row=i // 4, column=i % 4)
             self.buttons.append(button)
@@ -52,8 +53,8 @@ class MemoryGame:
             self.buttons[first_idx].config(bg="lightgreen")
             self.buttons[second_idx].config(bg="lightgreen")
         else:
-            self.buttons[first_idx].config(text="", state="normal")
-            self.buttons[second_idx].config(text="", state="normal")
+            self.buttons[first_idx].config(text="", state="normal", bg="lightblue")
+            self.buttons[second_idx].config(text="", state="normal", bg="lightblue")
 
         # Reset selections
         self.first_card = None
